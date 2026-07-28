@@ -245,15 +245,39 @@ del "%~f0"
   app.quit();
 }
 
+const MAX_REDIRECTS = 5;
+
 function downloadFile(
   url: string, dest: string, expectedSize: number,
   onProgress?: (percent: number) => void,
+  redirectCount = 0,
 ): Promise<void> {
   return new Promise((resolve, reject) => {
     const mod = url.startsWith('https') ? https : http;
     const fileStream = fs.createWriteStream(dest);
 
     const req = mod.get(url, { timeout: DOWNLOAD_TIMEOUT_MS }, (res) => {
+      if (res.statusCode && res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        fileStream.close();
+        fs.unlink(dest, () => {});
+        if (redirectCount >= MAX_REDIRECTS) {
+          reject(new Error(`Too many redirects (${MAX_REDIRECTS})`));
+          return;
+        }
+        const nextUrl = res.headers.location;
+        updaterLog.info(`Following redirect ${res.statusCode}`, { from: url, to: nextUrl });
+        downloadFile(nextUrl, dest, expectedSize, onProgress, redirectCount + 1).then(resolve).catch(reject);
+        return;
+      }
+
+      if (res.statusCode !== 200) {
+        fileStream.close();
+        fs.unlink(dest, () => {});
+        reject(new Error(`HTTP ${res.statusCode} for ${url}`));
+        req.destroy();
+        return;
+      }
+
       const total = parseInt(res.headers['content-length'] || '0', 10);
 
       if (expectedSize > 0 && total > 0 && total !== expectedSize) {
@@ -277,6 +301,11 @@ function downloadFile(
       });
       res.on('end', () => {
         fileStream.end();
+        if (downloaded === 0 && expectedSize > 0) {
+          fs.unlink(dest, () => {});
+          reject(new Error(`Empty response from ${url} (expected ${expectedSize} bytes)`));
+          return;
+        }
         resolve();
       });
       res.on('error', (err) => {
