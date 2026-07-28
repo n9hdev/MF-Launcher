@@ -1,0 +1,209 @@
+[
+  {
+    "name": "MemoryHacker_CheatEngine",
+    "description": "Cheat Engine process detected — memory scanner/editor",
+    "severity": "critical",
+    "category": "MemoryHacker",
+    "matchType": "process_name",
+    "patterns": ["cheatengine*.exe", "cheatengine-i386.exe", "cheatengine-x86_64.exe", "cheatengine64.exe"],
+    "tags": ["process", "memory_hacker"]
+  },
+  {
+    "name": "MemoryHacker_ArtMoney",
+    "description": "ArtMoney memory editor detected",
+    "severity": "high",
+    "category": "MemoryHacker",
+    "matchType": "process_name",
+    "patterns": ["artmoney*.exe"],
+    "tags": ["process", "memory_hacker"]
+  },
+  {
+    "name": "MemoryHacker_GameConqueror",
+    "description": "GameConqueror memory scanner detected",
+    "severity": "high",
+    "category": "MemoryHacker",
+    "matchType": "process_name",
+    "patterns": ["gameconqueror*.exe", "scanmem*.exe"],
+    "tags": ["process", "memory_hacker"]
+  },
+  {
+    "name": "MemoryHacker_TSearch",
+    "description": "TSearch memory scanner detected",
+    "severity": "high",
+    "category": "MemoryHacker",
+    "matchType": "process_name",
+    "patterns": ["tsearch*.exe"],
+    "tags": ["process", "memory_hacker"]
+  },
+  {
+    "name": "MemoryHacker_MHS",
+    "description": "MHS (Memory Hacking Software) detected",
+    "severity": "high",
+    "category": "MemoryHacker",
+    "matchType": "process_name",
+    "patterns": ["mhs*.exe"],
+    "tags": ["process", "memory_hacker"]
+  },
+  {
+    "name": "MTA_Cheat_RedEngine",
+    "description": "RedEngine MTA cheat detected",
+    "severity": "critical",
+    "category": "MTA_Cheat_Process",
+    "matchType": "process_name",
+    "patterns": ["redengine*.exe"],
+    "tags": ["process", "mtacheat"]
+  },
+  {
+    "name": "MTA_Cheat_EvilEye",
+    "description": "EvilEye MTA cheat detected",
+    "severity": "critical",
+    "category": "MTA_Cheat_Process",
+    "matchType": "process_name",
+    "patterns": ["evileye*.exe"],
+    "tags": ["process", "mtacheat"]
+  },
+  {
+    "name": "MTA_Cheat_UvCheats",
+    "description": "UV Cheats loader detected",
+    "severity": "critical",
+    "category": "MTA_Cheat_Process",
+    "matchType": "process_name",
+    "patterns": ["uv*.exe"],
+    "tags": ["process", "mtacheat"]
+  },
+  {
+    "name": "MTA_Cheat_Axiom",
+    "description": "Axiom MTA cheat detected",
+    "severity": "critical",
+    "category": "MTA_Cheat_Process",
+    "matchType": "process_name",
+    "patterns": ["axiom*.exe"],
+    "tags": ["process", "mtacheat"]
+  },
+  {
+    "name": "MTA_Cheat_Nematic",
+    "description": "Nematic MTA cheat detected",
+    "severity": "critical",
+    "category": "MTA_Cheat_Process",
+    "matchType": "process_name",
+    "patterns": ["nematic*.exe"],
+    "tags": ["process", "mtacheat"]
+  },
+  {
+    "name": "MTA_Cheat_ProjectX",
+    "description": "Project X cheat detected",
+    "severity": "critical",
+    "category": "MTA_Cheat_Process",
+    "matchType": "process_name",
+    "patterns": ["projectx*.exe"],
+    "tags": ["process", "mtacheat"]
+  },
+  {
+    "name": "MTA_Cheat_RedEngineReloader",
+    "description": "RedEngine reloader/updater detected",
+    "severity": "high",
+    "category": "MTA_Cheat_Process",
+    "matchType": "process_name",
+    "patterns": ["reloader*.exe"],
+    "tags": ["process", "mtacheat"]
+  },
+  {
+    "name": "InjectorFramework_ExtremeInjector",
+    "description": "Extreme Injector detected",
+    "severity": "critical",
+    "category": "Known_Injector",
+    "matchType": "process_name",
+    "patterns": ["extreme*.exe", "extreme_injector*.exe"],
+    "tags": ["process", "injector"]
+  },
+  {
+    "name": "InjectorFramework_ProcessHacker",
+    "description": "Process Hacker detected — advanced process manipulation tool",
+    "severity": "high",
+    "category": "Known_Injector",
+    "matchType": "process_name",
+    "patterns": ["processhacker*.exe"],
+    "tags": ["process", "injector"]
+  },
+  {
+    "name": "InjectorFramework_Xenos",
+    "description": "Xenos injector detected",
+    "severity": "critical",
+    "category": "Known_Injector",
+    "matchType": "process_name",
+    "patterns": ["xenos*.exe"],
+    "tags": ["process", "injector"]
+  },
+  {
+    "name": "InjectorFramework_GuidedHacking",
+    "description": "Guided Hacking injector detected",
+    "severity": "critical",
+    "category": "Known_Injector",
+    "matchType": "process_name",
+    "patterns": ["gh_injector*.exe"],
+    "tags": ["process", "injector"]
+  },
+  {
+    "name": "Injector_Generic_Injectors",
+    "description": "Common DLL injector processes detected",
+    "severity": "critical",
+    "category": "Known_Injector",
+    "matchType": "process_name",
+    "patterns": ["injector*.exe", "inject*.exe", "dllinject*.exe"],
+    "tags": ["process", "injector"]
+  },
+  {
+    "name": "CheatLauncher_Generic",
+    "description": "Common cheat launcher/trainer name patterns",
+    "severity": "high",
+    "category": "Generic_Cheat",
+    "matchType": "process_name",
+    "patterns": ["trainer*.exe", "hack*.exe", "cheat*.exe", "modmenu*.exe", "aimbot*.exe", "wallhack*.exe", "esp*.exe", "crack*.exe"],
+    "tags": ["process", "generic_cheat"]
+  },
+  {
+    "name": "MemoryTool_ReClassNET",
+    "description": "ReClass.NET memory reverse engineering tool detected",
+    "severity": "high",
+    "category": "MemoryHacker",
+    "matchType": "process_name",
+    "patterns": ["reclass*.exe"],
+    "tags": ["process", "memory_hacker"]
+  },
+  {
+    "name": "MemoryTool_OllyDbg",
+    "description": "OllyDbg debugger detected — commonly used for cheat analysis",
+    "severity": "high",
+    "category": "Debugger",
+    "matchType": "process_name",
+    "patterns": ["ollydbg*.exe"],
+    "tags": ["process", "debugger"]
+  },
+  {
+    "name": "Debugger_x64dbg",
+    "description": "x64dbg/x32dbg debugger detected",
+    "severity": "high",
+    "category": "Debugger",
+    "matchType": "process_name",
+    "patterns": ["x64dbg*.exe", "x32dbg*.exe", "x96dbg*.exe"],
+    "tags": ["process", "debugger"]
+  },
+  {
+    "name": "MemoryTool_GM9",
+    "description": "GameMaster 9 memory editor detected",
+    "severity": "high",
+    "category": "MemoryHacker",
+    "matchType": "process_name",
+    "patterns": ["gamemaster*.exe"],
+    "tags": ["process", "memory_hacker"]
+  },
+  {
+    "name": "MTA_Cheat_LuaExec",
+    "description": "Common MTA Lua executor / injector process",
+    "severity": "critical",
+    "category": "MTA_Cheat_Process",
+    "matchType": "process_name",
+    "patterns": ["luainject*.exe", "luaexec*.exe", "mtaloader*.exe", "mtahack*.exe", "mtacheat*.exe", "mtatool*.exe"],
+    "tags": ["process", "mtacheat"]
+  }
+]

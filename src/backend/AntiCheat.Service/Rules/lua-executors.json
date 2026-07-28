@@ -1,0 +1,10 @@
+[
+  {
+    "name": "MTA_LuaExecutor_Detection",
+    "description": "Binary links a Lua DLL — Lua executor for MTA cheat scripting",
+    "severity": "high",
+    "category": "MTA_LuaExecutor",
+    "matchType": "lua_dll",
+    "tags": ["lua", "executor", "mtacheat"]
+  }
+]

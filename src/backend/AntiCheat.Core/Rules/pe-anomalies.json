@@ -1,0 +1,85 @@
+[
+  {
+    "name": "PackedUnsigned_Suspicious",
+    "description": "Packed executable without digital signature — common cheat obfuscation",
+    "severity": "high",
+    "category": "PackedUnsigned",
+    "matchType": "packed_unsigned",
+    "tags": ["packed", "unsigned", "obfuscation"]
+  },
+  {
+    "name": "PackedHighEntropy_Executable",
+    "description": "Executable with high file entropy >7.5 — possible packed/encrypted payload",
+    "severity": "medium",
+    "category": "HighEntropy",
+    "matchType": "high_entropy",
+    "conditions": { "entropyThreshold": 7.5 },
+    "tags": ["high_entropy", "packed"]
+  },
+  {
+    "name": "HighEntropyOverlay",
+    "description": "Overlay data with high entropy — possible appended payload",
+    "severity": "medium",
+    "category": "HighEntropy",
+    "matchType": "high_entropy_overlay",
+    "conditions": { "entropyThreshold": 7.5 },
+    "tags": ["overlay", "payload"]
+  },
+  {
+    "name": "SuspiciousSectionName",
+    "description": "Section name matches known cheat patterns",
+    "severity": "high",
+    "category": "SectionAnomaly",
+    "matchType": "suspicious_section_name",
+    "tags": ["section", "suspicious_name"]
+  },
+  {
+    "name": "ExecutableWritableSection_RWX",
+    "description": "Section is both executable and writable (RWX) — potential shellcode container",
+    "severity": "high",
+    "category": "SectionAnomaly",
+    "matchType": "rwx_section",
+    "tags": ["section", "rwx", "shellcode"]
+  },
+  {
+    "name": "LowEntropyCodeSection",
+    "description": "Code section has unusually low entropy — possible encrypted/stored code",
+    "severity": "medium",
+    "category": "SectionAnomaly",
+    "matchType": "low_entropy_code",
+    "conditions": { "codeEntropyThreshold": 1.0 },
+    "tags": ["section", "low_entropy", "encrypted"]
+  },
+  {
+    "name": "ResourceSectionExecutable",
+    "description": "Resource section (.rsrc) is marked executable — code stored in resources",
+    "severity": "high",
+    "category": "SectionAnomaly",
+    "matchType": "rsrc_executable",
+    "tags": ["section", "rsrc", "code_in_resources"]
+  },
+  {
+    "name": "TlsCallbacks_Present",
+    "description": "Binary uses TLS callbacks — anti-debug or stealth execution technique",
+    "severity": "medium",
+    "category": "TlsCallbacks",
+    "matchType": "tls_callbacks",
+    "tags": ["tls", "anti_debug", "stealth"]
+  },
+  {
+    "name": "UnsignedDllInGameDir",
+    "description": "Unsigned DLL present in game directory — potential DLL sideloading",
+    "severity": "high",
+    "category": "DLLSideloading",
+    "matchType": "unsigned_dll_game_dir",
+    "tags": ["dll", "sideloading", "unsigned"]
+  },
+  {
+    "name": "SelfSignedOnGameFile",
+    "description": "Self-signed certificate on file with game-related naming — potential fake signer",
+    "severity": "medium",
+    "category": "FakeSigner",
+    "matchType": "self_signed_game_file",
+    "tags": ["self_signed", "fake_signer"]
+  }
+]

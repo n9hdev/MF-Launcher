@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Version>6.0.0.1</Version>
+    <FileVersion>6.0.0.1</FileVersion>
+    <AssemblyVersion>6.0.0.1</AssemblyVersion>
+    <Description>Mafia City Anti-Cheat V6 API Server</Description>
+    <Copyright>Copyright (c) 2026</Copyright>
+    <Product>Mafia City Anti-Cheat V6</Product>
+    <Company>Mafia City Security</Company>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="8.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.11">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting.WindowsServices" Version="10.0.9" />
+    <PackageReference Include="Serilog.AspNetCore" Version="8.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="5.0.0" />
+    <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AntiCheat.Core\AntiCheat.Core.csproj" />
+    <ProjectReference Include="..\AntiCheat.Shared\AntiCheat.Shared.csproj" />
+    <ProjectReference Include="..\AntiCheat.Detection\AntiCheat.Detection.csproj" />
+    <ProjectReference Include="..\AntiCheat.Launcher\AntiCheat.Launcher.csproj" />
+  </ItemGroup>
+</Project>

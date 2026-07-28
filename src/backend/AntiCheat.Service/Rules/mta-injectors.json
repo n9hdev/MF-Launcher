@@ -1,0 +1,95 @@
+[
+  {
+    "name": "MTA_Injector_Full",
+    "description": "Binary imports full injection API set (OpenProcess + WriteProcessMemory + CreateRemoteThread + VirtualAllocEx)",
+    "severity": "critical",
+    "category": "MTA_Injector",
+    "matchType": "injection_api_set",
+    "conditions": {
+      "minApiCount": 3,
+      "apis": ["OpenProcess", "WriteProcessMemory", "CreateRemoteThread", "VirtualAllocEx"]
+    },
+    "tags": ["injection", "mtacheat"]
+  },
+  {
+    "name": "MTA_Injector_OpenProcess",
+    "description": "Binary imports OpenProcess — handle acquisition capability",
+    "severity": "medium",
+    "category": "MTA_Injector",
+    "matchType": "dangerous_import",
+    "conditions": { "apis": ["OpenProcess"] },
+    "tags": ["injection", "openprocess"]
+  },
+  {
+    "name": "MTA_Injector_WriteProcessMemory",
+    "description": "Binary imports WriteProcessMemory — memory writing capability",
+    "severity": "high",
+    "category": "MTA_Injector",
+    "matchType": "dangerous_import",
+    "conditions": { "apis": ["WriteProcessMemory"] },
+    "tags": ["injection", "writeprocessmemory"]
+  },
+  {
+    "name": "MTA_Injector_CreateRemoteThread",
+    "description": "Binary imports CreateRemoteThread — remote code execution",
+    "severity": "high",
+    "category": "MTA_Injector",
+    "matchType": "dangerous_import",
+    "conditions": { "apis": ["CreateRemoteThread", "CreateRemoteThreadEx"] },
+    "tags": ["injection", "createremotethread"]
+  },
+  {
+    "name": "MTA_Injector_VirtualAllocEx",
+    "description": "Binary imports VirtualAllocEx — remote memory allocation",
+    "severity": "medium",
+    "category": "MTA_Injector",
+    "matchType": "dangerous_import",
+    "conditions": { "apis": ["VirtualAllocEx"] },
+    "tags": ["injection", "virtualallocex"]
+  },
+  {
+    "name": "MTA_Injector_VirtualProtectEx",
+    "description": "Binary imports VirtualProtectEx — memory protection bypass",
+    "severity": "medium",
+    "category": "MTA_Injector",
+    "matchType": "dangerous_import",
+    "conditions": { "apis": ["VirtualProtectEx"] },
+    "tags": ["injection", "virtualprotectex"]
+  },
+  {
+    "name": "MTA_Injector_SetWindowsHookEx",
+    "description": "Binary imports SetWindowsHookEx — hook injection vector",
+    "severity": "medium",
+    "category": "MTA_Injector",
+    "matchType": "dangerous_import",
+    "conditions": { "apis": ["SetWindowsHookEx"] },
+    "tags": ["injection", "hook"]
+  },
+  {
+    "name": "MTA_Injector_NtCreateThreadEx",
+    "description": "Binary imports NtCreateThreadEx — native thread creation",
+    "severity": "medium",
+    "category": "MTA_Injector",
+    "matchType": "dangerous_import",
+    "conditions": { "apis": ["NtCreateThreadEx"] },
+    "tags": ["injection", "ntapi"]
+  },
+  {
+    "name": "MTA_Injector_NtUnmapViewOfSection",
+    "description": "Binary imports NtUnmapViewOfSection — process hollowing indicator",
+    "severity": "medium",
+    "category": "MTA_Injector",
+    "matchType": "dangerous_import",
+    "conditions": { "apis": ["NtUnmapViewOfSection"] },
+    "tags": ["injection", "hollowing"]
+  },
+  {
+    "name": "MTA_Injector_QueueUserAPC",
+    "description": "Binary imports QueueUserAPC — APC injection vector",
+    "severity": "medium",
+    "category": "MTA_Injector",
+    "matchType": "dangerous_import",
+    "conditions": { "apis": ["QueueUserAPC"] },
+    "tags": ["injection", "apc"]
+  }
+]
