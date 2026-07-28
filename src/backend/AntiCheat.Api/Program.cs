@@ -28,7 +28,10 @@ Log.Logger = new LoggerConfiguration()
     .CreateLogger();
 
 builder.Host.UseSerilog();
-builder.Host.UseWindowsService();
+if (!Environment.UserInteractive)
+{
+    builder.Host.UseWindowsService();
+}
 
 var jwtSection = builder.Configuration.GetSection("Jwt");
 var jwtSecretValue = jwtSection["Secret"];
