@@ -16,13 +16,18 @@ Log.Logger = new LoggerConfiguration()
 
 try
 {
-    var host = Host.CreateDefaultBuilder(args)
-        .UseContentRoot(AppContext.BaseDirectory)
-        .UseWindowsService(options =>
+    var builder = Host.CreateDefaultBuilder(args)
+        .UseContentRoot(AppContext.BaseDirectory);
+
+    if (!Environment.UserInteractive)
+    {
+        builder.UseWindowsService(options =>
         {
             options.ServiceName = "MafiaCityAntiCheatV6";
-        })
-        .UseSerilog()
+        });
+    }
+
+    var host = builder.UseSerilog()
         .ConfigureServices((context, services) =>
         {
             services.AddSingleton<IConfidenceScorer, ConfidenceScorer>();
