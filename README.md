@@ -30,6 +30,7 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 | **Cheat Detection** | Memory scanning, process monitoring, injection detection, YARA rules, network monitoring |
 | **HWID Tracking** | Hardware fingerprinting to prevent ban evasion and HWID spoofing |
 | **Live Screen Capture** | Remotely capture screenshots or live stream a player's screen for investigation |
+| **Live Screen Streaming** | Real-time streaming with configurable FPS (1–30), JPEG quality control, admin viewer management |
 | **Ticket & Chat System** | Players submit reports; staff responds with a built-in per-ticket chat |
 | **Flagged Players** | Separate investigation queue for high-priority suspicious players |
 | **Auto-Updates** | Self-updating client with signed manifests and GitHub fallback download |
@@ -93,6 +94,10 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.3.7** | 2026-08-03 | Stability and false-positive fixes: named pipe connection fix, heartbeat reliability, detection tuning, certificate verification improvements |
+| **v6.3.6** | 2026-07-30 | Streaming fixes: CSP data: URI fix, canvas→img rendering, 15fps default, End/Leave separation, DB fallback for active streams, PowerShell fallback capture |
+| **v6.3.5** | 2026-07-29 | API self-contained publish, stream lifecycle fixes |
+| **v6.3.4** | 2026-07-29 | Named pipe async fix, screenshot deduplication, CapturedBy preservation |
 | **v6.3.2** | 2026-07-27 | Bug fixes: chat toggle persistence, screenshot/stream connectivity |
 | **v6.3.1** | 2026-07-27 | Ticket & chat system, player flagging, screenshot/stream capture |
 | **v6.3.0** | 2026-07-26 | Auto-update system, signed installers, GitHub fallback download |
