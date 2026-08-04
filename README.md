@@ -58,6 +58,8 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 
 The installer is Authenticode-signed and all updates are verified with SHA-256 hashes.
 
+> **Note for v6.3.6 users:** v6.3.7 changed the update-signing keypair. If the in-app update banner does not appear, download v6.3.7 from [Releases](https://github.com/n9hdev/MF-Launcher/releases) and install it manually once. All future updates will auto-install from then on.
+
 ---
 
 ## How It Works
