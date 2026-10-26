@@ -58,7 +58,7 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 
 The installer is Authenticode-signed and all updates are verified with SHA-256 hashes.
 
-> **Note for v6.3.6 users:** v6.3.7 changed the update-signing keypair. If the in-app update banner does not appear, download v6.3.7 from [Releases](https://github.com/n9hdev/MF-Launcher/releases) and install it manually once. All future updates will auto-install from then on.
+> **Important:** v6.3.8 restores screenshot and live-stream communication for v6.3.7 clients. Install v6.3.8 when prompted, or download it manually from [Releases](https://github.com/n9hdev/MF-Launcher/releases) if the update banner does not appear.
 
 ---
 
@@ -96,6 +96,7 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.3.8** | 2026-10-26 | Restores service-to-dashboard IPC, screenshots, and live streaming; fixes service restart shutdown; hardens reconnect handling and adds end-to-end IPC release tests |
 | **v6.3.7** | 2026-08-03 | Stability and false-positive fixes: named pipe connection fix, heartbeat reliability, detection tuning, certificate verification improvements |
 | **v6.3.6** | 2026-07-30 | Streaming fixes: CSP data: URI fix, canvas→img rendering, 15fps default, End/Leave separation, DB fallback for active streams, PowerShell fallback capture |
 | **v6.3.5** | 2026-07-29 | API self-contained publish, stream lifecycle fixes |
