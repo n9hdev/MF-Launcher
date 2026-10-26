@@ -58,7 +58,7 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 
 The installer is Authenticode-signed and all updates are verified with SHA-256 hashes.
 
-> **Important:** v6.3.8 restores screenshot and live-stream communication for v6.3.7 clients. Install v6.3.8 when prompted, or download it manually from [Releases](https://github.com/n9hdev/MF-Launcher/releases) if the update banner does not appear.
+> **Latest:** v6.4.0 introduces the complete premium Mafia City interface and includes security-state synchronization and player scan fixes. Existing v6.3.8 clients receive it through the signed automatic updater.
 
 ---
 
@@ -96,6 +96,7 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.4.0** | 2026-10-26 | Complete black, white, and crimson interface; branded role dashboards; native window controls; authorized player scans; reliable initial SignalR state; working filters and exports; responsive loading and empty states |
 | **v6.3.8** | 2026-10-26 | Restores service-to-dashboard IPC, screenshots, and live streaming; fixes service restart shutdown; hardens reconnect handling and adds end-to-end IPC release tests |
 | **v6.3.7** | 2026-08-03 | Stability and false-positive fixes: named pipe connection fix, heartbeat reliability, detection tuning, certificate verification improvements |
 | **v6.3.6** | 2026-07-30 | Streaming fixes: CSP data: URI fix, canvas→img rendering, 15fps default, End/Leave separation, DB fallback for active streams, PowerShell fallback capture |
