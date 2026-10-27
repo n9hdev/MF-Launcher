@@ -58,7 +58,7 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 
 The installer is Authenticode-signed and all updates are verified with SHA-256 hashes.
 
-> **Latest:** v6.4.0 introduces the complete premium Mafia City interface and includes security-state synchronization and player scan fixes. Existing v6.3.8 clients receive it through the signed automatic updater.
+> **Latest:** v6.5.0 adds Discord login and mandatory player linking, encrypted Remember Me autofill, live operational dashboards, real protection history, and security dependency updates. This development deployment continues to use the current HTTP API until the final HTTPS/domain migration.
 
 ---
 
@@ -96,6 +96,7 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.5.0** | 2026-10-27 | Discord OAuth login and mandatory account linking; encrypted Remember Me autofill; live command center, telemetry, detection, infrastructure, protection, history, and account data; screenshot/stream reconnect validation; dependency and deployment hardening |
 | **v6.4.0** | 2026-10-26 | Complete black, white, and crimson interface; branded role dashboards; native window controls; authorized player scans; reliable initial SignalR state; working filters and exports; responsive loading and empty states |
 | **v6.3.8** | 2026-10-26 | Restores service-to-dashboard IPC, screenshots, and live streaming; fixes service restart shutdown; hardens reconnect handling and adds end-to-end IPC release tests |
 | **v6.3.7** | 2026-08-03 | Stability and false-positive fixes: named pipe connection fix, heartbeat reliability, detection tuning, certificate verification improvements |
