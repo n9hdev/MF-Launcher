@@ -58,7 +58,7 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 
 The installer is Authenticode-signed and all updates are verified with SHA-256 hashes.
 
-> **Latest:** v6.6.0 adds signed per-device service telemetry, replay and tamper rejection, exact protected-code verification for `client.dll` and `netc.dll`, process-bound post-launch integrity, and stricter native MTA SD enforcement. The development deployment continues to use the current HTTP API until the final HTTPS/domain migration.
+> **Latest:** v6.6.1 fixes the false "Waiting for service" state after restoring an expired login session and hardens live SignalR startup against overlapping connections. The development deployment continues to use the current HTTP API until the final HTTPS/domain migration.
 
 ---
 
@@ -96,6 +96,7 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.6.1** | 2026-10-29 | Session refresh now completes before SignalR startup; concurrent live-connection attempts are serialized; false offline dashboard state fixed |
 | **v6.6.0** | 2026-10-28 | TPM/DPAPI device credentials; signed service requests; replay protection; protected MTA code-region verification; process-bound post-launch integrity; SD 12/15/16/31/32 |
 | **v6.5.2** | 2026-10-27 | Context-aware PE heuristics; authoritative server-side detection counts; session-safe pre-launch validation; legacy-client compatibility filtering |
 | **v6.5.1** | 2026-10-27 | Correct detector health semantics; reliable YARA, anti-injection, and anti-tamper status mapping; enabled memory, memory-region, and injection-timing scanners; live module heartbeat details |
