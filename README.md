@@ -58,7 +58,7 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 
 The installer is Authenticode-signed and all updates are verified with SHA-256 hashes.
 
-> **Latest:** v6.7.5 requires three consecutive authoritative server-admission approvals before auto-connect, preventing verification-in-progress connection attempts.
+> **Latest:** v6.7.6 adds a scrollable screenshot and live-stream evidence archive to Live Player View and fixes persisted stream-history rendering.
 
 ---
 
@@ -96,6 +96,7 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.7.6** | 2026-10-30 | Live Player View screenshot gallery, evidence lightbox, stream-session archive, and persisted history contract fix |
 | **v6.7.5** | 2026-10-29 | Authoritative API admission polling with three stable approvals before MTA auto-connect |
 | **v6.7.4** | 2026-10-29 | Admission-aware delayed MTA auto-connect; complete MTA/GTA process-tree termination |
 | **v6.7.3** | 2026-10-29 | SuperAdmin-controlled MTA host/port and auto-connect; live session uptime synchronization; silent risk decay; repaired whitelist resource deployment |
