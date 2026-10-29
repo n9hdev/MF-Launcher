@@ -58,7 +58,7 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 
 The installer is Authenticode-signed and all updates are verified with SHA-256 hashes.
 
-> **Latest:** v6.7.3 adds centrally managed MTA auto-connect, fixes live dashboard session duration, silences false decay alerts, and repairs duplicate whitelist deployment.
+> **Latest:** v6.7.4 waits for anti-cheat admission readiness before sending the MTA auto-connect request and reliably terminates the complete MTA/GTA process tree.
 
 ---
 
@@ -96,6 +96,7 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.7.4** | 2026-10-29 | Admission-aware delayed MTA auto-connect; complete MTA/GTA process-tree termination |
 | **v6.7.3** | 2026-10-29 | SuperAdmin-controlled MTA host/port and auto-connect; live session uptime synchronization; silent risk decay; repaired whitelist resource deployment |
 | **v6.7.2** | 2026-10-29 | Prioritized live MTA DLL attestation; isolated deep-scan timeouts; fixed the client Lua API failure; made network drift telemetry non-punitive and spawn/teleport aware |
 | **v6.7.1** | 2026-10-29 | Fixed the pre-connect `client.dll` loading deadlock; added a tightly bounded post-connect runtime verification stage with automatic removal on timeout |
