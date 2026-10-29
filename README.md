@@ -96,7 +96,7 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
-| **v6.6.1** | 2026-10-29 | Session refresh now completes before SignalR startup; concurrent live-connection attempts are serialized; false offline dashboard state fixed |
+| **v6.6.1** | 2026-10-29 | Session refresh now completes before SignalR startup; concurrent live-connection attempts are serialized; false offline dashboard state and signed hash-verification binding fixed |
 | **v6.6.0** | 2026-10-28 | TPM/DPAPI device credentials; signed service requests; replay protection; protected MTA code-region verification; process-bound post-launch integrity; SD 12/15/16/31/32 |
 | **v6.5.2** | 2026-10-27 | Context-aware PE heuristics; authoritative server-side detection counts; session-safe pre-launch validation; legacy-client compatibility filtering |
 | **v6.5.1** | 2026-10-27 | Correct detector health semantics; reliable YARA, anti-injection, and anti-tamper status mapping; enabled memory, memory-region, and injection-timing scanners; live module heartbeat details |
