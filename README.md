@@ -58,7 +58,7 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 
 The installer is Authenticode-signed and all updates are verified with SHA-256 hashes.
 
-> **Latest:** v6.7.0 enforces signed device attestation and fresh post-launch MTA code integrity before server admission. Confirmed protected-code tampering triggers a permanent integrity ban, while unsupported builds and scanner failures remain fail-closed without automatic punishment.
+> **Latest:** v6.7.1 adds staged MTA integrity verification: trusted `netc.dll` and on-disk `client.dll` are required before admission, then live `client.dll` code is verified immediately after joining. Confirmed tampering still triggers a permanent integrity ban.
 
 ---
 
@@ -96,6 +96,7 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.7.1** | 2026-10-29 | Fixed the pre-connect `client.dll` loading deadlock; added a tightly bounded post-connect runtime verification stage with automatic removal on timeout |
 | **v6.7.0** | 2026-10-29 | Mandatory signed heartbeat and post-launch integrity; protected `netc.dll`/`client.dll` attestation; permanent bans for confirmed hooks; safe denial for unsupported or unavailable verification |
 | **v6.6.2** | 2026-10-29 | Reliable public-IP reporting through signed heartbeats; multi-provider fallback and caching; registration/session identity IP fixes |
 | **v6.6.1** | 2026-10-29 | Session refresh now completes before SignalR startup; concurrent live-connection attempts are serialized; false offline dashboard state and signed hash-verification binding fixed |
