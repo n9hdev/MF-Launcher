@@ -58,7 +58,7 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 
 The installer is Authenticode-signed and all updates are verified with SHA-256 hashes.
 
-> **Latest:** v6.7.6 adds a scrollable screenshot and live-stream evidence archive to Live Player View and fixes persisted stream-history rendering.
+> **Latest:** v6.8.0 enforces one protected account per PC across password and Discord authentication, records signed PC hardware inventories, and blocks hardware changes until an administrator approves the new baseline.
 
 ---
 
@@ -96,6 +96,8 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.8.0** | 2026-11-04 | One-account-per-PC authentication gate; signed CPU/GPU/RAM/disk/OS inventory; automatic hardware-change bans; admin configuration and change history with reviewed-baseline approval |
+| **v6.7.7** | 2026-10-30 | Restored screenshot and attachment rendering by authorizing the exact Cloudinary media host in the desktop security policy |
 | **v6.7.6** | 2026-10-30 | Live Player View screenshot gallery, evidence lightbox, stream-session archive, and persisted history contract fix |
 | **v6.7.5** | 2026-10-29 | Authoritative API admission polling with three stable approvals before MTA auto-connect |
 | **v6.7.4** | 2026-10-29 | Admission-aware delayed MTA auto-connect; complete MTA/GTA process-tree termination |
