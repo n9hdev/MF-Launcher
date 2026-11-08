@@ -58,7 +58,7 @@ A real-time anti-cheat system built for GTA San Andreas Multiplayer (MTA:SA). Pr
 
 The installer is Authenticode-signed and all updates are verified with SHA-256 hashes.
 
-> **Latest release:** v6.10.0 hardens dashboard/service IPC, protected launch authorization, signed endpoint policy, ban and appeal lifecycle, persistent notifications, deployment rollback, encrypted backups, and shadow-mode in-game telemetry.
+> **Latest release:** v6.10.1 restores login, registration, and Discord authentication for existing installations by delivering the hardware identity through the authenticated service pipe. It also rejects false MTA paths from the Windows Installer cache.
 
 ---
 
@@ -96,6 +96,7 @@ Every 5 seconds, the player's service sends a heartbeat to the server. The serve
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v6.10.1** | 2026-11-08 | Restored account and Discord authentication for existing encrypted identity caches; moved hardware identity delivery to authenticated IPC; added bounded service-handshake waiting; hardened MTA installation validation |
 | **v6.10.0** | 2026-11-06 | Authenticated IPC and launch acknowledgement; signed rotating endpoint policy; correct ban expiry and appeal revocation; persistent notifications; rate limits; deployment rollback; encrypted backup; shadow-mode MTA detection bridge |
 | **v6.9.0** | 2026-11-04 | Exact player search by account, serial, HWID, email, and Discord; immediate ban/unban and role management; actionable real-time notifications; live chat and typing; resilient MTA discovery; fail-closed launcher provenance enforcement |
 | **v6.8.0** | 2026-11-04 | One-account-per-PC authentication gate; signed CPU/GPU/RAM/disk/OS inventory; automatic hardware-change bans; admin configuration and change history with reviewed-baseline approval |
